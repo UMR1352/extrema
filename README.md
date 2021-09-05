@@ -9,5 +9,5 @@ Just call it on a collection!
 let xs = vec![0, 1, 2, 3];
 let minmax = xs.extrema();
 
-assert_eq!(minmax, (0, 3));
+assert_eq!(minmax, Some((0, 3)));
 ```
