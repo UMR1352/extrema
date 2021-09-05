@@ -1,0 +1,13 @@
+[package]
+name = "extrema"
+authors = ["Enrico Marconi"]
+version = "0.1.0"
+edition = "2018"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/umr1352/extrema"
+documentation = "https://docs.rs/extrema"
+readme = "README.md"
+keywords = ["minmax", "minmax_element", "extrema"]
+categories = ["algorithms"]
+
+[dependencies]
