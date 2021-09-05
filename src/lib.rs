@@ -6,7 +6,7 @@
 //! Just call it on any iterable collection!
 //! ```
 //! let my_set: HashSet<i32> = (1..300).collect();
-//! let (min, max) = my_set.iter().extrema();
+//! let (min, max) = my_set.iter().extrema().unwrap();
 //!
 //! assert_eq!((min, max), (&1, &300));
 //! ```
