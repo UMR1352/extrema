@@ -46,29 +46,23 @@ where
     type Item = T;
     fn extrema(self) -> Option<(Self::Item, Self::Item)> {
         let mut iter = self.into_iter();
-        let first = iter.next();
-        let second = iter.next();
+        match (iter.next(), iter.next()) {
+            (Some(mut min), Some(mut max)) => {
+                if min > max {
+                    std::mem::swap(&mut min, &mut max);
+                }
 
-        // Edge case: collections with less than 2 items have no extremes
-        if first.is_none() || second.is_none() {
-            return None;
-        }
+                for x in iter {
+                    if x < min {
+                        min = x;
+                    } else if x > max {
+                        max = x;
+                    }
+                }
 
-        let mut min = first.unwrap();
-        let mut max = second.unwrap();
-
-        if min > max {
-            std::mem::swap(&mut min, &mut max);
-        }
-
-        for x in iter {
-            if x < min {
-                min = x;
-            } else if x > max {
-                max = x;
+                Some((min, max))
             }
+            _ => None
         }
-
-        Some((min, max))
     }
 }
