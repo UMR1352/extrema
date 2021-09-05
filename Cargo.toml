@@ -1,6 +1,7 @@
 [package]
 name = "extrema"
 authors = ["Enrico Marconi"]
+description = "C++'s minmax_element implementation in rust"
 version = "0.1.0"
 edition = "2018"
 license = "MIT OR Apache-2.0"
