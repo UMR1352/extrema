@@ -62,7 +62,8 @@ where
 
                 Some((min, max))
             }
-            _ => None
+            // Edge case: collections with less than 2 items have no extremes
+            _ => None,
         }
     }
 }
